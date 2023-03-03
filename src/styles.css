@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+   
+
+html, body { height: 100%; }
+body {
+    background-image:url(../src/assets/estrellas-en-el-universo-morado_3000x2000_xtrafondos.com.jpg);
+    background-position:center ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    max-width: none;
+    animation:move 10s infinite linear alternate;
+    -webkit-animation:move 10s infinite linear alternate;
+    
+}
+@keyframes move {
+    from{
+        background-position: bottom left;
+    }to{
+        background-position: top right;;
+    }
+    
+}
+

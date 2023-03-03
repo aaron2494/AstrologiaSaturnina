@@ -1,0 +1,28 @@
+
+<form [formGroup]="forms" (ngSubmit)="enviarDatos()">
+<mat-form-field appearance="fill"  >
+    <mat-label>Nombre y Apellido</mat-label>
+    <input matInput class="form-control"value="name" formControlName="name" required> 
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select value="option"formControlName="option" class="form-control"required >
+      <mat-option value="revolucion solar (1000$)">revolucion solar 1000$</mat-option>
+      <mat-option value="revolucion lunar (1000$)">revolucion lunar 1000$</mat-option>
+      <mat-option value="revolucion francesa (1000$)">revolucion francesa 1000$</mat-option>
+      <mat-option value="revolucion austriaca (1000$)">revolucion austriaca 1000$</mat-option>
+      <mat-option value="revolucion japonesa (1000$)">revolucion japonesa 1000$</mat-option>
+      <mat-option value="revolucion de marte (1000$)">revolucion de marte 1000$</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" value="comment"  >
+    <mat-label>comentario(opcional)</mat-label>
+    <textarea matInput formControlName="comment"class="form-control"></textarea>
+  </mat-form-field>
+  <div>
+    <button mat-button color="primary" type="submit" [disabled]="forms.invalid">
+      enviar
+    </button>
+  </div>
+  
+</form>
