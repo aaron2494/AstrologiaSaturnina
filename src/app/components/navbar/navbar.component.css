@@ -2,17 +2,15 @@
     flex: 1 1 auto;
   }
   .nabvar{
-    
-    background: linear-gradient(rgba(229, 217, 238, 0.808),rgba(153, 59, 197, 0.2));
-    
+    background: linear-gradient(rgba(145, 75, 167, 0.6),rgba(153, 59, 197, 0.2));
+    opacity: 0.9;
 }
-  .button{
-    color:rgb(255, 255, 255)
-  }
-  img{
-    padding: 5px;
-  }
-  h1{
-    text-align: center;
+
+  .example-icon{
+    background-color: rgb(13, 13, 14);
+    color: rgb(255, 255, 255);
     
+  }
+  a{
+    color: rgb(255, 255, 255);
   }

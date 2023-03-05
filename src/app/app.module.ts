@@ -20,6 +20,7 @@ import{ MatDialogModule}from '@angular/material/dialog';
 import{ MatInputModule}from '@angular/material/input';
 import { OpendialogComponent } from './components/opendialog/opendialog.component';
 import { AlertsComponent } from './components/alerts/alerts.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -32,6 +33,7 @@ import { AlertsComponent } from './components/alerts/alerts.component';
     InformacionComponent,
     OpendialogComponent,
     AlertsComponent,
+    DashboardComponent,
     
   ],
   imports: [

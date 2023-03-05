@@ -15,6 +15,14 @@
       <mat-option value="revolucion de marte (1000$)">revolucion de marte 1000$</mat-option>
     </mat-select>
   </mat-form-field>
+  <mat-form-field appearance="fill" value="date"  >
+    <mat-label>fecha de nacimiento</mat-label>
+    <input matInput type="date" formControlName="date"class="form-control">
+  </mat-form-field>
+  <mat-form-field appearance="fill" value="time"  >
+    <mat-label>Hora de nacimiento</mat-label>
+    <input matInput type="time" formControlName="time"class="form-control">
+  </mat-form-field>
   <mat-form-field appearance="fill" value="comment"  >
     <mat-label>comentario(opcional)</mat-label>
     <textarea matInput formControlName="comment"class="form-control"></textarea>

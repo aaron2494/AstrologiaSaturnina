@@ -1,0 +1,19 @@
+.container{
+    text-align: center;
+    text-shadow: 20 5px 10px #f0eff0b3;
+    justify-content: center; 
+    color: #bd54eeb3;
+    
+}
+h1{
+    margin-top: 5%;
+    font-size: 45px;
+    letter-spacing: 8px;
+    word-spacing: 2px;
+    
+}
+img{
+    padding: 30px;
+}
+
+
