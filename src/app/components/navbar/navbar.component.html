@@ -3,6 +3,7 @@
   <mat-menu #menu="matMenu" class="menu">
   <button mat-menu-item>
     <a href="https://api.whatsapp.com/send?phone=1164115327" target="_blank">
+
     <img src="../../../assets/whatsapp-fill.svg">
     </a>
  </button>
@@ -12,14 +13,10 @@
     </a>
   </button>
   </mat-menu>
-
   <span class="example-spacer"></span>
-  <div class="button">
-  <button mat-button class="example-icon" aria-label="Example icon-button with share icon">
-    <a routerLink="/informacion">Información</a>
-  </button>
-
-  </div>
+  <mat-dialog-actions >
+    <button mat-button class="example-icon" (click)="openDialog()">Login</button>
+</mat-dialog-actions>  
 </mat-toolbar>
 
 

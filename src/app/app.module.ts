@@ -11,7 +11,7 @@ import {MatButtonModule}from '@angular/material/button';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import {MatCardModule}from '@angular/material/card';
 import {MatMenuModule, matMenuAnimations} from '@angular/material/menu';
-import { InformacionComponent } from './components/informacion/informacion.component'
+
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import{ MatOptionModule}from '@angular/material/core';
@@ -21,6 +21,7 @@ import{ MatInputModule}from '@angular/material/input';
 import { OpendialogComponent } from './components/opendialog/opendialog.component';
 import { AlertsComponent } from './components/alerts/alerts.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -30,10 +31,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AppComponent,
     NavbarComponent,
     CarouselComponent,
-    InformacionComponent,
     OpendialogComponent,
     AlertsComponent,
     DashboardComponent,
+    LoginComponent,
     
   ],
   imports: [
