@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Cartas } from 'src/app/interfaces/respuesta';
+import { ApiserviceService } from 'src/app/servicios/apiservice.service';
 import { OpendialogComponent } from '../opendialog/opendialog.component';
 
 @Component({
@@ -8,10 +10,13 @@ import { OpendialogComponent } from '../opendialog/opendialog.component';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
+  cartas:Cartas[] = []
   
+  ngOnInit(): void {
+    this.getCartas()
+  }
 
-
-  constructor(private matDialog:MatDialog ) { 
+  constructor(private matDialog:MatDialog, private apiService:ApiserviceService ) { 
   }
   
   openDialog(){
@@ -20,7 +25,12 @@ export class CarouselComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
+  getCartas(){
+    this.apiService.getCartas().subscribe((data:any) =>{
+      this.cartas = data 
+      console.log(this.cartas)
+    })
   }
+ 
 
 }

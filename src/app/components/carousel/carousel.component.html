@@ -1,60 +1,20 @@
 <app-navbar></app-navbar>
 <app-dashboard></app-dashboard>
 <div class="content">
-    
-<div class="card">
+  <div class="card"
+  *ngFor="let carta of cartas">
     <div class="face front">
-     <img src="../../../assets/cartaTarot.jpg" alt="">
-     <h3>Revolucion Solar</h3>
+      <img src="../../../assets/cartaTarot.jpg" alt="" />
+      <h3>{{ carta.titulo }}</h3>
     </div>
     <div class="face back">
-        
-            <h3>algo</h3>
-            <p>Revolucion solar =1000$.
-            Revolucion lunar =1000$.
-            </p>
-                <div class="link">
-                    <button  mat-raised-button (click)="openDialog()">Realizar Pedido</button>
-                </div>  
-        </div>
-</div>
-<div class="card">
-    <div class="face front">
-     <img src="../../../assets/cartaTarot.jpg" alt="">
-     <h3>Carta Natal</h3>
+      <h3>{{ carta.nombre }}</h3>
+      <p>{{ carta.descripcion }}</p>
+      <div class="link">
+        <button mat-raised-button (click)="openDialog()">
+          Realizar Pedido
+        </button>
+      </div>
     </div>
-    <div class="face back">
-            <h3>algo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam veniam deleniti nobis est, quia labore accusamus dolores molestiae nam repellat itaque officiis quam quos magni.</p>
-            <div class="link">
-                <button  mat-raised-button (click)="openDialog()">Realizar Pedido</button>
-            </div>  
-    </div>
-</div>
-<div class="card">
-    <div class="face front">
-     <img src="../../../assets/cartaTarot.jpg" alt="">
-     <h3>Tirada de Carta</h3>
-    </div>
-    <div class="face back">
-            <h3>algo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam veniam deleniti nobis est, quia labore accusamus dolores molestiae nam repellat itaque officiis quam quos magni.</p>
-            <div class="link">
-                <button  mat-raised-button (click)="openDialog()">Realizar Pedido</button>
-            </div>  
-    </div>
-</div>
-<div class="card">
-    <div class="face front">
-     <img src="../../../assets/cartaTarot.jpg" alt="">
-     <h3>Revolucion industrial</h3>
-    </div>
-    <div class="face back">
-            <h3>algo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam veniam deleniti nobis est, quia labore accusamus dolores molestiae nam repellat itaque officiis quam quos magni.</p>
-            <div class="link">
-                <button  mat-raised-button (click)="openDialog()">Realizar Pedido</button>
-            </div>  
-    </div>
-</div>
+  </div>      
 </div>
