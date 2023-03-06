@@ -11,7 +11,7 @@ import {MatButtonModule}from '@angular/material/button';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import {MatCardModule}from '@angular/material/card';
 import {MatMenuModule, matMenuAnimations} from '@angular/material/menu';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import{ MatOptionModule}from '@angular/material/core';
@@ -22,7 +22,7 @@ import { OpendialogComponent } from './components/opendialog/opendialog.componen
 import { AlertsComponent } from './components/alerts/alerts.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { InterceptorService } from './servicios/interceptor.service';
 
 
 
@@ -52,9 +52,12 @@ import { LoginComponent } from './components/login/login.component';
     MatSelectModule,
      MatDialogModule,
      MatInputModule,
+     HttpClientModule
     
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
