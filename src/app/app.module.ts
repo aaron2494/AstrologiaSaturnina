@@ -23,6 +23,7 @@ import { AlertsComponent } from './components/alerts/alerts.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { InterceptorService } from './servicios/interceptor.service';
+import { ModalEditarComponent } from './components/modal-editar/modal-editar.component';
 
 
 
@@ -35,6 +36,7 @@ import { InterceptorService } from './servicios/interceptor.service';
     AlertsComponent,
     DashboardComponent,
     LoginComponent,
+    ModalEditarComponent,
     
   ],
   imports: [

@@ -4,7 +4,7 @@ export interface RespuestaAutenticacion {
 }
 
 export interface Cartas {
-  Id: number;
+  id: number;
   titulo: string;
   nombre: string;
   descripcion: string;
