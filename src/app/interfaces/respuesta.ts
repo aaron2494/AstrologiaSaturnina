@@ -8,10 +8,12 @@ export interface Cartas {
   titulo: string;
   nombre: string;
   descripcion: string;
+  precio:number;
 }
 
 export interface CartaDTO{
     titulo:string;
     nombre:string;
     descripcion:string;
+    precio:number;
 }

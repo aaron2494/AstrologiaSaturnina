@@ -10,13 +10,27 @@ import { CartaDTO, Cartas, RespuestaAutenticacion } from '../interfaces/respuest
 export class ApiserviceService {
   url = environment.baseUrl;
   token!:string
+  private precio = new BehaviorSubject<number>(0)
+  precio$ = this.precio.asObservable()
+
   private idCarta = new BehaviorSubject<number>(0)
   idCarta$ = this.idCarta.asObservable()
 
+  private cartas = new BehaviorSubject<[]>([])
+  cartas$ = this.cartas.asObservable()
+
   cartaActualizada = new EventEmitter();
 
-
   constructor(private http:HttpClient) { }
+
+  
+  estaLogueado(): boolean {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return false;
+    }
+    return true;
+  }
   
 
   login(email:string, password:string):Observable<RespuestaAutenticacion>{
@@ -32,8 +46,20 @@ export class ApiserviceService {
     this.idCarta.next(id)
   }
 
+  emitPrecio(precio:number){
+    this.precio.next(precio)
+  }
+
+  emitCartas(cartas:any){
+    this.cartas.next(cartas)
+  }
+
   getCartas():Observable<Cartas>{
     return this.http.get<Cartas>(`${this.url}/carta`)
+  }
+
+  getCarta(id:number){
+    return this.http.get<Cartas>(`${this.url}/carta/carta?id=${id}`)
   }
 
   editarCarta(id:number, carta:CartaDTO):Observable<CartaDTO>{

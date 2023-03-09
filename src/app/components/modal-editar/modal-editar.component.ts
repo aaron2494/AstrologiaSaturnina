@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { ApiserviceService } from 'src/app/servicios/apiservice.service';
+import { ApiserviceService } from 'src/app/servicios/cartas.service';
 
 @Component({
   selector: 'app-modal-editar',
@@ -18,6 +18,7 @@ export class ModalEditarComponent implements OnInit {
       titulo:['',Validators.required],
       nombre:['',Validators.required],
       descripcion:['',Validators.required],
+      precio:['', Validators.required]
     })
    }
 
@@ -31,6 +32,7 @@ export class ModalEditarComponent implements OnInit {
       titulo: this.forms.value.titulo,
       nombre: this.forms.value.nombre,
       descripcion: this.forms.value.descripcion,
+      precio:this.forms.value.precio
     };
     this.apiService.idCarta$.subscribe((id) => {
       this.apiService.editarCarta(id, carta).subscribe((data) => {

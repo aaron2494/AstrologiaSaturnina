@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Cartas } from 'src/app/interfaces/respuesta';
-import { ApiserviceService } from 'src/app/servicios/apiservice.service';
+import { ApiserviceService } from 'src/app/servicios/cartas.service';
 import { ModalEditarComponent } from '../modal-editar/modal-editar.component';
 import { OpendialogComponent } from '../opendialog/opendialog.component';
 
@@ -25,7 +25,9 @@ export class CarouselComponent implements OnInit {
   constructor(private matDialog:MatDialog, private apiService:ApiserviceService ) { 
   }
   
-  openDialog(){
+  openDialog(id:number){
+    this.id = id
+    this.apiService.emitId(this.id)
     this.matDialog.open(OpendialogComponent,{
       width:'350px'
     })
@@ -33,7 +35,8 @@ export class CarouselComponent implements OnInit {
 
   getCartas(){
     this.apiService.getCartas().subscribe((data:any) =>{
-      this.cartas = data 
+      this.cartas = data
+      this.apiService.emitCartas(this.cartas)
     })
   }
 
