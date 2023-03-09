@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiserviceService } from 'src/app/servicios/apiservice.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ApiserviceService } from 'src/app/servicios/cartas.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   hide = true;
   forms!:FormGroup
   email: any;
-  constructor(private fB:FormBuilder, private apiService:ApiserviceService) { 
+  constructor(private fB:FormBuilder, private apiService:ApiserviceService, private dialogRef:MatDialog) { 
     this.forms=this.fB.group({
       email : ['', [Validators.required, Validators.email]],
       password: ['',[Validators.required]]
@@ -24,8 +25,13 @@ export class LoginComponent implements OnInit {
     .subscribe((data:any) =>{
       this.apiService.token = data.token 
       localStorage.setItem('token', this.apiService.token)
+      this.cerrarDialogo()
     })
 
+  }
+
+  cerrarDialogo(): void {
+    this.dialogRef.closeAll()
   }
 
 

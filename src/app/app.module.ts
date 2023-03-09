@@ -12,7 +12,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import {MatCardModule}from '@angular/material/card';
 import {MatMenuModule, matMenuAnimations} from '@angular/material/menu';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import{ MatOptionModule}from '@angular/material/core';
 import{ MatSelectModule}from '@angular/material/select';
@@ -24,7 +24,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { ModalEditarComponent } from './components/modal-editar/modal-editar.component';
-
+import { AutorizadoComponent } from './utilidades/autorizado/autorizado.component';
 
 
 @NgModule({
@@ -37,6 +37,7 @@ import { ModalEditarComponent } from './components/modal-editar/modal-editar.com
     DashboardComponent,
     LoginComponent,
     ModalEditarComponent,
+    AutorizadoComponent,
     
   ],
   imports: [
@@ -54,7 +55,8 @@ import { ModalEditarComponent } from './components/modal-editar/modal-editar.com
     MatSelectModule,
      MatDialogModule,
      MatInputModule,
-     HttpClientModule
+     HttpClientModule,
+     FormsModule
     
   ],
   providers: [

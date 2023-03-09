@@ -119,4 +119,6 @@ letter-spacing: 2px;
     -ms-transform: perspective(600px) rotateY(360deg);
     -o-transform: perspective(600px) rotateY(360deg);
 }
-
+.link .editar{
+    margin:1.5rem;
+}
