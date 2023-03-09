@@ -10,11 +10,17 @@
     <div class="face back">
       <h3>{{ carta.nombre }}</h3>
       <p>{{ carta.descripcion }}</p>
+      <p>Precio:{{carta.precio}}
+      </p>
       <div class="link">
-        <button mat-raised-button (click)="openDialog()">
+        <button mat-raised-button (click)="openDialog(carta.id)">
           Realizar Pedido
         </button>
-        <button (click)="editarDialog(carta.id)">Editar</button>
+        <app-autorizado>
+          <ng-container autorizado>
+            <button class="editar"  mat-raised-button (click)="editarDialog(carta.id)">Editar</button>
+          </ng-container>
+        </app-autorizado>
       </div>
     </div>
   </div>      
