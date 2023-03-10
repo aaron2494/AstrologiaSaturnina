@@ -11,6 +11,7 @@ export class ApiserviceService {
   url = environment.baseUrl;
   token!:string
   private precio = new BehaviorSubject<number>(0)
+  cartaId:number | undefined
   precio$ = this.precio.asObservable()
 
   private idCarta = new BehaviorSubject<number>(0)
@@ -58,12 +59,16 @@ export class ApiserviceService {
     return this.http.get<Cartas>(`${this.url}/carta`)
   }
 
+  createCarta(carta:CartaDTO):Observable<CartaDTO>{
+    return this.http.post<CartaDTO>(`${this.url}/carta/crear`, carta)
+  }
+
   getCarta(id:number){
-    return this.http.get<Cartas>(`${this.url}/carta/carta?id=${id}`)
+    return this.http.get<Cartas>(`${this.url}/carta/id?id=${id}`)
   }
 
   editarCarta(id:number, carta:CartaDTO):Observable<CartaDTO>{
-    return this.http.put<CartaDTO>(`${this.url}/carta?id=${id}`, carta)
+    return this.http.put<CartaDTO>(`${this.url}/carta/editar?id=${id}`, carta)
     .pipe(
       tap(() => {
         this.cartaActualizada.emit()

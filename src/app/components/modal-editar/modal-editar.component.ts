@@ -9,38 +9,50 @@ import { ApiserviceService } from 'src/app/servicios/cartas.service';
   styleUrls: ['./modal-editar.component.css']
 })
 export class ModalEditarComponent implements OnInit {
-  forms!:FormGroup
+  forms!: FormGroup;
+  id: number | undefined;
 
-
-  constructor(private formBuilder:FormBuilder, private apiService:ApiserviceService) {
-
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiService: ApiserviceService,
+    private dialog: MatDialog
+  ) {
     this.forms = this.formBuilder.group({
-      titulo:['',Validators.required],
-      nombre:['',Validators.required],
-      descripcion:['',Validators.required],
-      precio:['', Validators.required]
-    })
-   }
+      titulo: ["", Validators.required],
+      nombre: ["", Validators.required],
+      descripcion: ["", Validators.required],
+      precio: ["", Validators.required],
+    });
+  }
 
   ngOnInit(): void {
+    this.id = this.apiService.cartaId;
 
   }
 
+  cerrarDialogo(): void {
+    this.dialog.closeAll();
+    console.log(this.id);
+  }
 
   enviarDatos() {
     const carta = {
       titulo: this.forms.value.titulo,
       nombre: this.forms.value.nombre,
       descripcion: this.forms.value.descripcion,
-      precio:this.forms.value.precio
+      precio: this.forms.value.precio,
     };
-    this.apiService.idCarta$.subscribe((id) => {
-      this.apiService.editarCarta(id, carta).subscribe((data) => {
-        console.log(data);
+  
+    if (this.id) {
+      this.apiService.editarCarta(this.id, carta).subscribe((data) => {
+        console.log(data, "editando");
         this.apiService.cartaActualizada.emit();
       });
-    }, (err) =>{
-      console.log(err)
-    });
+    } else {
+      this.apiService.createCarta(carta).subscribe((data) => {
+        console.log(data, "creando");
+        this.apiService.cartaActualizada.emit();
+      });
+    }
   }
 }

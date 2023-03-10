@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginComponent } from '../login/login.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiserviceService } from 'src/app/servicios/cartas.service';
+import { OpendialogComponent } from '../opendialog/opendialog.component';
+import { ModalEditarComponent } from '../modal-editar/modal-editar.component';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -25,9 +27,21 @@ export class NavbarComponent implements OnInit {
       width:'350px'
     })
     dialogRef.afterClosed().subscribe((data  =>{
-      console.log(data)
     }))
     
+  }
+
+  abrirDialogo(){
+    const dialogRef = this.dialog.open(ModalEditarComponent, {
+      width:'350px'
+    })
+    dialogRef.afterClosed().subscribe((data => {
+      this.cerrarDialogo()
+    }))
+  }
+
+  cerrarDialogo(): void {
+    this.dialog.closeAll()
   }
 
   ngOnInit(): void {

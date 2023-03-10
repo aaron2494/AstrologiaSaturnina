@@ -11,10 +11,9 @@ import { OpendialogComponent } from '../opendialog/opendialog.component';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
-  cartas:Cartas[] = []
-  id!:number
-  
-  
+  cartas: Cartas[] = [];
+  id: number | undefined;
+
   ngOnInit(): void {
     this.getCartas();
     this.apiService.cartaActualizada.subscribe(() => {
@@ -22,31 +21,37 @@ export class CarouselComponent implements OnInit {
     });
   }
 
-  constructor(private matDialog:MatDialog, private apiService:ApiserviceService ) { 
+  constructor(public dialog: MatDialog, private apiService: ApiserviceService) {}
+
+  openDialog(id: number) {
+    this.id = id;
+    this.apiService.emitId(this.id);
+    this.dialog.open(OpendialogComponent, {
+      width: "350px",
+    });
   }
+
+  editarDialog(id: number) {
+    if (id) {
+      this.apiService.cartaId = id;
+      console.log(this.apiService.cartaId);
+      const dialogRef = this.dialog.open(ModalEditarComponent, {
+        width: "500px",
+        height: "300px",
+      });
   
-  openDialog(id:number){
-    this.id = id
-    this.apiService.emitId(this.id)
-    this.matDialog.open(OpendialogComponent,{
-      width:'350px'
-    })
+      dialogRef.afterClosed().subscribe((data) => {
+        this.apiService.cartaId = undefined;
+        console.log(this.apiService.cartaId);
+      });
+    } else {
+      console.log("El ID de la carta es nulo o indefinido");
+    }
   }
-
-  getCartas(){
-    this.apiService.getCartas().subscribe((data:any) =>{
-      this.cartas = data
-      this.apiService.emitCartas(this.cartas)
-    })
+  getCartas() {
+    this.apiService.getCartas().subscribe((data: any) => {
+      this.cartas = data;
+      this.apiService.emitCartas(this.cartas);
+    });
   }
-
-  editarDialog(id:number){
-    this.id = id
-    this.apiService.emitId(this.id)
-    this.matDialog.open(ModalEditarComponent,{
-      width:'350px'
-    })
-  }
- 
-
 }
