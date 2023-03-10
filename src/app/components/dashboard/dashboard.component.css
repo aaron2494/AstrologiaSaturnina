@@ -21,6 +21,11 @@ h1{
 }
 img{
     padding: 30px;
+    
 }
-
+@media (max-width: 500px) {
+    img {
+        padding:15px;
+  }
+}
 

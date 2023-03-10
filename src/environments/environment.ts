@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: "https://www.astrologiasaturnina.com"
+  baseUrl: "https://srv886.hstgr.io:7443/e50acba76cdf51ef/files/Api"
 };
 
 /*
