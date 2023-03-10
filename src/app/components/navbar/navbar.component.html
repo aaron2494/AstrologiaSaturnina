@@ -15,15 +15,16 @@
   </mat-menu>
   <span class="example-spacer"></span>
 
-  <app-autorizado class="flex gap-2">
+  <app-autorizado class="flex">
     <ng-container autorizado>
       <a
-        class="font-bold uppercase text-gray-600 text-sm cursor-pointer"
+        
         >Bienvenida</a
       >
+      <button mat-button class="example-icon" (click)="abrirDialogo()" >Crear carta</button>
     </ng-container>
     <ng-container noAutorizado>
-      <button type="submit" mat-button class="example-icon" *ngIf="!token" (click)="openDialog()">Login</button>
+      <button type="" mat-button class="example-icon" *ngIf="!token" (click)="openDialog()">Login</button>
     </ng-container>
   </app-autorizado>
   
