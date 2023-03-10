@@ -10,7 +10,14 @@ h1{
     font-size: 40px;
     letter-spacing: 8px;
     word-spacing: 2px;
-    
+    font-weight: bold; font-size: 30px; 
+    background: #8b3792; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
+    text-shadow: 0px 1px 3px rgb(255, 255, 255),0px 2px 1px rgb(255, 255, 255);
+    text-transform: uppercase;
 }
 img{
     padding: 30px;

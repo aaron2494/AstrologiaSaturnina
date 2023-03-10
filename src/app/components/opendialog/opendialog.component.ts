@@ -43,7 +43,7 @@ descripcion:string = ''
       let date =this.forms.value.date;
       let time =this.forms.value.time;
       let precio = this.precio
-       window.open("https://api.whatsapp.com/send?phone=+5491164115327&text=Hola%20AstrologiaSaturnina%0Ami%20nombre%20es%20" + nombre + "%0Avengo%20por%20la%20" + descripcion + "%0Ami%20fecha%20de%20nacimiento%20es%0A"+ date +"%0Ami%20Hora%20de%20nacimiento%20es%0A" + time +"%0A" + "%20El%20Precio%20es:%20" + precio + "$" + "%0A" + comment) 
+       window.open("https://api.whatsapp.com/send?phone=+5491156392380&text=Hola%20AstrologiaSaturnina%0Ami%20nombre%20es%20" + nombre + "%0Avengo%20por%20la%20" + descripcion + "%0Ami%20fecha%20de%20nacimiento%20es%0A"+ date +"%0Ami%20Hora%20de%20nacimiento%20es%0A" + time +"%0A" + "%20El%20Precio%20es:%20" + precio + "$" + "%0A" + comment) 
    }
    
 }
