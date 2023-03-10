@@ -23,7 +23,7 @@ import { AlertsComponent } from './components/alerts/alerts.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { InterceptorService } from './servicios/interceptor.service';
-import { ModalEditarComponent } from './components/modal-editar/modal-editar.component';
+import { ModalCartaComponent } from './components/modal-carta/modal-carta.component';
 import { AutorizadoComponent } from './utilidades/autorizado/autorizado.component';
 
 
@@ -36,7 +36,7 @@ import { AutorizadoComponent } from './utilidades/autorizado/autorizado.componen
     AlertsComponent,
     DashboardComponent,
     LoginComponent,
-    ModalEditarComponent,
+    ModalCartaComponent,
     AutorizadoComponent,
     
   ],

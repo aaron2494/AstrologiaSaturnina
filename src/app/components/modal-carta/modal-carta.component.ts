@@ -4,11 +4,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { ApiserviceService } from 'src/app/servicios/cartas.service';
 
 @Component({
-  selector: 'app-modal-editar',
-  templateUrl: './modal-editar.component.html',
-  styleUrls: ['./modal-editar.component.css']
+  selector: 'app-modal-carta',
+  templateUrl: './modal-carta.component.html',
+  styleUrls: ['./modal-carta.component.css']
 })
-export class ModalEditarComponent implements OnInit {
+export class ModalCartaComponent implements OnInit {
   forms!: FormGroup;
   id: number | undefined;
 

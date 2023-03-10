@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalEditarComponent } from './modal-editar.component';
+import { ModalCartaComponent } from './modal-carta.component';
 
-describe('ModalEditarComponent', () => {
-  let component: ModalEditarComponent;
-  let fixture: ComponentFixture<ModalEditarComponent>;
+describe('ModalCartaComponent', () => {
+  let component: ModalCartaComponent;
+  let fixture: ComponentFixture<ModalCartaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalEditarComponent ]
+      declarations: [ ModalCartaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ModalEditarComponent);
+    fixture = TestBed.createComponent(ModalCartaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

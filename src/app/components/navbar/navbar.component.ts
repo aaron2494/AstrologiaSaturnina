@@ -5,7 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiserviceService } from 'src/app/servicios/cartas.service';
 import { OpendialogComponent } from '../opendialog/opendialog.component';
-import { ModalEditarComponent } from '../modal-editar/modal-editar.component';
+import { ModalCartaComponent } from '../modal-carta/modal-carta.component';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
   abrirDialogo(){
-    const dialogRef = this.dialog.open(ModalEditarComponent, {
+    const dialogRef = this.dialog.open(ModalCartaComponent, {
       width:'350px'
     })
     dialogRef.afterClosed().subscribe((data => {

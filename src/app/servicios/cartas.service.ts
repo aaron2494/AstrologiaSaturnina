@@ -56,19 +56,19 @@ export class ApiserviceService {
   }
 
   getCartas():Observable<Cartas>{
-    return this.http.get<Cartas>(`${this.url}/carta`)
+    return this.http.get<Cartas>(`${this.url}/cartas`)
   }
 
   createCarta(carta:CartaDTO):Observable<CartaDTO>{
-    return this.http.post<CartaDTO>(`${this.url}/carta/crear`, carta)
+    return this.http.post<CartaDTO>(`${this.url}/cartas/crear`, carta)
   }
 
   getCarta(id:number){
-    return this.http.get<Cartas>(`${this.url}/carta/id?id=${id}`)
+    return this.http.get<Cartas>(`${this.url}/cartas/id?id=${id}`)
   }
 
   editarCarta(id:number, carta:CartaDTO):Observable<CartaDTO>{
-    return this.http.put<CartaDTO>(`${this.url}/carta/editar?id=${id}`, carta)
+    return this.http.put<CartaDTO>(`${this.url}/cartas/editar?id=${id}`, carta)
     .pipe(
       tap(() => {
         this.cartaActualizada.emit()

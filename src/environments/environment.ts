@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  baseUrl: "https://srv886.hstgr.io:7443/e50acba76cdf51ef/files/Api"
+  production: true,
+  baseUrl: "https://astrologiaapirep20230310170454.azurewebsites.net/api"
 };
 
 /*

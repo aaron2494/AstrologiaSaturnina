@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Cartas } from 'src/app/interfaces/respuesta';
 import { ApiserviceService } from 'src/app/servicios/cartas.service';
-import { ModalEditarComponent } from '../modal-editar/modal-editar.component';
+import { ModalCartaComponent } from '../modal-carta/modal-carta.component';
 import { OpendialogComponent } from '../opendialog/opendialog.component';
 
 @Component({
@@ -35,7 +35,7 @@ export class CarouselComponent implements OnInit {
     if (id) {
       this.apiService.cartaId = id;
       console.log(this.apiService.cartaId);
-      const dialogRef = this.dialog.open(ModalEditarComponent, {
+      const dialogRef = this.dialog.open(ModalCartaComponent, {
         width: "500px",
         height: "300px",
       });
