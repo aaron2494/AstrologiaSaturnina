@@ -19,7 +19,7 @@ import{ MatSelectModule}from '@angular/material/select';
 import{ MatDialogModule}from '@angular/material/dialog';
 import{ MatInputModule}from '@angular/material/input';
 import { OpendialogComponent } from './components/opendialog/opendialog.component';
-import { AlertsComponent } from './components/alerts/alerts.component';
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { InterceptorService } from './servicios/interceptor.service';
@@ -34,7 +34,6 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     CarouselComponent,
     OpendialogComponent,
-    AlertsComponent,
     DashboardComponent,
     LoginComponent,
     ModalCartaComponent,

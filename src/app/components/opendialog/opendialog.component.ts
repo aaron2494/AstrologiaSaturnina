@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cartas } from 'src/app/interfaces/respuesta';
 import { ApiserviceService } from 'src/app/servicios/cartas.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-opendialog',
@@ -15,7 +16,10 @@ precio!:number
 cartas:Cartas[] = []
 descripcion:string = ''
 
-  constructor(private fB:FormBuilder, private apiService:ApiserviceService) {
+  constructor(private fB:FormBuilder,
+     private apiService:ApiserviceService,
+     public dialogRef: MatDialogRef<OpendialogComponent>) {
+      
     this.forms=this.fB.group({
       name:['',Validators.minLength(10)],
       date:['',Validators.required],
@@ -44,7 +48,8 @@ descripcion:string = ''
       let time =this.forms.value.time;
       let precio = this.precio
        window.open("https://api.whatsapp.com/send?phone=+5491156392380&text=Hola%20AstrologiaSaturnina%0Ami%20nombre%20es%20" + nombre + "%0Avengo%20por%20la%20" + descripcion + "%0Ami%20fecha%20de%20nacimiento%20es:%0A"+ date +"%0Ami%20Hora%20de%20nacimiento%20es:%0A" + time +"%0A" + "%20El%20Precio%20es:%20" + precio + "$" + "%0A" + comment) 
-   }
+       this.dialogRef.close();
+      }
    
 }
 

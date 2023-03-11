@@ -32,7 +32,7 @@ export class ModalCartaComponent implements OnInit {
 
   cerrarDialogo(): void {
     this.dialog.closeAll();
-    console.log(this.id);
+
   }
 
   enviarDatos() {
@@ -45,12 +45,10 @@ export class ModalCartaComponent implements OnInit {
   
     if (this.id) {
       this.apiService.editarCarta(this.id, carta).subscribe((data) => {
-        console.log(data, "editando");
         this.apiService.cartaActualizada.emit();
       });
     } else {
       this.apiService.createCarta(carta).subscribe((data) => {
-        console.log(data, "creando");
         this.apiService.cartaActualizada.emit();
       });
     }

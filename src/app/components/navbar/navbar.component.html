@@ -3,7 +3,7 @@
   <mat-menu #menu="matMenu" class="menu">
   <button class="boton-wp"mat-menu-item>
     <a class="escritorio" href="https://api.whatsapp.com/send?phone=1156392380" target="_blank">
-
+     
     <img src="../../../assets/whatsapp-fill.svg">
     </a>
     <a class="celular" href="https://api.whatsapp.com/send?phone=+5491156392380" target="_blank">
@@ -21,14 +21,15 @@
 
   <app-autorizado class="flex">
     <ng-container autorizado>
-      <a
-        
-        >Bienvenida</a
-      >
+      <a>Bienvenida</a>
       <button mat-button class="example-icon" (click)="abrirDialogo()" >Crear carta</button>
     </ng-container>
     <ng-container noAutorizado>
-      <button type="" mat-button class="example-icon" *ngIf="!token" (click)="openDialog()">Login (administrador)</button>
+      <img src="../../../assets/configuraciones.png" [matMenuTriggerFor]="login" class="config">
+      <mat-menu #login="matMenu" class="menu">
+        <button type="" mat-button  *ngIf="!token" (click)="openDialog()">Administrador</button>
+      </mat-menu>
+      
     </ng-container>
   </app-autorizado>
   

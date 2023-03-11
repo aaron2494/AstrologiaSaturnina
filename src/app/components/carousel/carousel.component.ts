@@ -34,7 +34,7 @@ export class CarouselComponent implements OnInit {
   editarDialog(id: number) {
     if (id) {
       this.apiService.cartaId = id;
-      console.log(this.apiService.cartaId);
+      
       const dialogRef = this.dialog.open(ModalCartaComponent, {
         width: "500px",
         height: "300px",
@@ -42,10 +42,10 @@ export class CarouselComponent implements OnInit {
   
       dialogRef.afterClosed().subscribe((data) => {
         this.apiService.cartaId = undefined;
-        console.log(this.apiService.cartaId);
+  
       });
     } else {
-      console.log("El ID de la carta es nulo o indefinido");
+  
     }
   }
   getCartas() {
