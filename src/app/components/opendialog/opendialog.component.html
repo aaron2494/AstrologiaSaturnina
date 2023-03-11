@@ -10,15 +10,12 @@
     />
   </mat-form-field>
   
-  
   <mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
+    <mat-label>Seleccionar Precio </mat-label>
     <mat-select class="form-control" required>
-      <mat-option [value]="precio">{{ precio }}</mat-option>
+      <mat-option [value]="precio">${{ precio }}</mat-option>
     </mat-select>
   </mat-form-field>
-
-  
 
   <mat-form-field appearance="fill" value="date">
     <mat-label>fecha de nacimiento</mat-label>

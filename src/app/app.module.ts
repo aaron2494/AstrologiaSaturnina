@@ -25,6 +25,7 @@ import { LoginComponent } from './components/login/login.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { ModalCartaComponent } from './components/modal-carta/modal-carta.component';
 import { AutorizadoComponent } from './utilidades/autorizado/autorizado.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { AutorizadoComponent } from './utilidades/autorizado/autorizado.componen
     LoginComponent,
     ModalCartaComponent,
     AutorizadoComponent,
+    FooterComponent,
     
   ],
   imports: [
