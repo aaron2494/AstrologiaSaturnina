@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, finalize, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CartaDTO, Cartas, RespuestaAutenticacion } from '../interfaces/respuesta';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class ApiserviceService {
 
   cartaActualizada = new EventEmitter();
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient , private loader : NgxUiLoaderService) { }
 
   
   estaLogueado(): boolean {
@@ -56,7 +57,9 @@ export class ApiserviceService {
   }
 
   getCartas():Observable<Cartas>{
+    this.loader.start()
     return this.http.get<Cartas>(`${this.url}/cartas`)
+    .pipe(finalize(()=>this.loader.stop()))
   }
 
   createCarta(carta:CartaDTO):Observable<CartaDTO>{

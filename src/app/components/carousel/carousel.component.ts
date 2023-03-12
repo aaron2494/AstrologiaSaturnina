@@ -5,6 +5,7 @@ import { ApiserviceService } from 'src/app/servicios/cartas.service';
 import { ModalCartaComponent } from '../modal-carta/modal-carta.component';
 import { OpendialogComponent } from '../opendialog/opendialog.component';
 
+
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -15,9 +16,10 @@ export class CarouselComponent implements OnInit {
   id: number | undefined;
 
   ngOnInit(): void {
+    
     this.getCartas();
     this.apiService.cartaActualizada.subscribe(() => {
-      this.getCartas();
+      this.getCartas()
     });
   }
 

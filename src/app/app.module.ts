@@ -26,6 +26,8 @@ import { InterceptorService } from './servicios/interceptor.service';
 import { ModalCartaComponent } from './components/modal-carta/modal-carta.component';
 import { AutorizadoComponent } from './utilidades/autorizado/autorizado.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ModalCartaComponent,
     AutorizadoComponent,
     FooterComponent,
+   
     
   ],
   imports: [
@@ -57,7 +60,8 @@ import { FooterComponent } from './components/footer/footer.component';
      MatDialogModule,
      MatInputModule,
      HttpClientModule,
-     FormsModule
+     FormsModule,
+     NgxUiLoaderModule
     
   ],
   providers: [
