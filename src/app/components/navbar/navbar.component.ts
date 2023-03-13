@@ -44,6 +44,9 @@ export class NavbarComponent implements OnInit {
     this.dialog.closeAll()
   }
 
+  logout(){
+    this.apiService.logout()
+  }
   ngOnInit(): void {
     this.token = this.apiService.getToken()
   }

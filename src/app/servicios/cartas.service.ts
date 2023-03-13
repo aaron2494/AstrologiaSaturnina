@@ -44,6 +44,10 @@ export class ApiserviceService {
     )
   }
 
+  logout(){
+    localStorage.removeItem('token')
+  }
+
   emitId(id:number){
     this.idCarta.next(id)
   }

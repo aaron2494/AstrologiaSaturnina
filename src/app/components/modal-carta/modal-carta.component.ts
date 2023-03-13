@@ -27,7 +27,16 @@ export class ModalCartaComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.apiService.cartaId;
-
+    if (this.id) {
+      this.apiService.getCarta(this.id).subscribe((carta) => {
+        this.forms.patchValue({
+          titulo: carta.titulo,
+          nombre: carta.nombre,
+          descripcion: carta.descripcion,
+          precio: carta.precio,
+        });
+      });
+    }
   }
 
   cerrarDialogo(): void {
